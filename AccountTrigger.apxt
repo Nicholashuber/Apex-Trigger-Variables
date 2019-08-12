@@ -1,0 +1,16 @@
+trigger AccountTrigger on Account (after insert) {
+               
+    if (Trigger.isInsert) {
+        Account old;
+        Map<Id, Account> oldAccounts = new Map<Id, Account>();
+        Map<Id, Account> newAccounts = new Map<Id, Account>();
+        
+        for (Account account: Trigger.new) {
+            System.debug('Owner id: ' + account.OwnerId);
+
+            if (account.Description != null && old.Description != account.Description) {
+               //code.run('','','');
+           }
+       }       
+   }
+}
